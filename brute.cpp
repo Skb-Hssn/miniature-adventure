@@ -36,8 +36,14 @@ void solve()
         for(int r = l; r < n; r++) {
             set<int> s;
             for(int i = l; i <= r; i++) s.insert(a[i]);
+            int mex = 0;
+            while(s.find(mex) != s.end()) mex++;
+            if(mex >= l && mex <= r) {
+                ans++;
+            }
         }
     }
+    printf("%d\n", ans);
 }
 
 int main() 
