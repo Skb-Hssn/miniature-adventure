@@ -25,6 +25,35 @@ struct debug {
 
 void solve()
 {
+    int n;
+    scanf("%d", &n);
+
+    vector<int> a(n);
+    for(int& i : a) scanf("%d", &i);
+
+    i64 ans = 0;
+
+    // l = 0
+    {
+        set<int> s;
+        int mex = 0;
+        for(int i = 0; i < n; i++) {
+            s.insert(a[i]);
+            while(s.find(mex) != s.end()) mex++;
+            if(mex <= i) ans++;
+        }
+    }
+
+    // l > 0
+    {
+        int r = 1;
+        multiset<int> m;
+        set<int> missing;
+        for(int i = 0; i <= n; i++) missing.insert(i);
+
+        for(int i = 1; i < n; i++) {
+        }
+    }
 }
 
 int main() 
